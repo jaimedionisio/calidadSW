@@ -21,7 +21,7 @@ public class TestReino_jd {
 
     @After
     public void liberarRecursos() {
-        // Limpiar o liberar recursos después de cada prueba
+        // Limpiar o liberar recursos despues de cada prueba
         reino = null;
     }
 
@@ -41,9 +41,9 @@ public class TestReino_jd {
         String casaDuena = "NuevaCasa";
 
         Reino nuevoReino = Reino.crearReino(nombre, casaDuena);
-        assertNotNull("El nuevo Reino no debería ser nulo", nuevoReino);
+        assertNotNull("El nuevo Reino no deberia ser nulo", nuevoReino);
         assertEquals("El nombre del Reino no coincide", "NuevoReino", nuevoReino.getNombreReino());
-        assertEquals("La casa dueña del Reino no coincide", "NuevaCasa2", nuevoReino.getCasaDuena());
+        assertEquals("La casa duena del Reino no coincide", "NuevaCasa2", nuevoReino.getCasaDuena());
 
         System.out.println("Test testCrearReino ha salido bien.");
     }
