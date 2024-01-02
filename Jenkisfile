@@ -38,7 +38,7 @@ pipeline {
 
     post {
         always {
-            // Otras acciones como limpiar el workspace
+            // Otras acciones como limpiar el workspace //
             cleanWs()
         }
     }
