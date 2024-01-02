@@ -73,10 +73,10 @@ public class TestReino_jd {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Ejecutar el método editarReino
+        // Ejecutar el metodo editarReino
         Reino.EditarReino(reino);
 
-        // Restaurar la entrada estándar
+        // Restaurar la entrada estandar
         System.setIn(System.in);
 
         // Verificar que los cambios se han realizado correctamente
