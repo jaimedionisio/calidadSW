@@ -26,7 +26,8 @@
           <!-- Configuración para ubicación personalizada de tests -->
           <testSourceDirectory>src/edu/ucam/aplication</testSourceDirectory>
           <includes>
-            <include>**/*Test.java</include>
+            <!-- Ajuste para incluir específicamente TestReino.java -->
+            <include>**/TestReino.java</include>
           </includes>
         </configuration>
       </plugin>
