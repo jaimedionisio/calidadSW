@@ -1,4 +1,5 @@
 package test.java;
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -7,9 +8,8 @@ import org.junit.Test;
 import edu.ucam.aplicacion.CargaDeDatos;
 import edu.ucam.aplicacion.Reino;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class TestReino_jd {
 
-class TestJenkins {
     private Reino reino;
 
     @Before
@@ -27,12 +27,12 @@ class TestJenkins {
 
     @Test
     public void testGetNombreReino() {
-       // assertEquals("NombreReino2", reino.getNombreReino());
+        assertEquals("NombreReino2", reino.getNombreReino());
     }
 
     @Test
     public void testGetCasaDuena() {
-        //assertEquals("CasaDuena2", reino.getCasaDuena());
+        assertEquals("CasaDuena2", reino.getCasaDuena());
     }
     
     @Test
@@ -42,8 +42,8 @@ class TestJenkins {
 
         Reino nuevoReino = Reino.crearReino(nombre, casaDuena);
         assertNotNull("El nuevo Reino no debería ser nulo", nuevoReino);
-       // assertEquals("El nombre del Reino no coincide", "NuevoReino", nuevoReino.getNombreReino());
-       // assertEquals("La casa dueña del Reino no coincide", "NuevaCasa2", nuevoReino.getCasaDuena());
+        assertEquals("El nombre del Reino no coincide", "NuevoReino", nuevoReino.getNombreReino());
+        assertEquals("La casa dueña del Reino no coincide", "NuevaCasa2", nuevoReino.getCasaDuena());
 
         System.out.println("Test testCrearReino ha salido bien.");
     }
