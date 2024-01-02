@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clona tu código fuente desde un repositorio Git
+                git 'https://github.com/jaimedionisio/calidadSW.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Ejecuta Maven para compilar el proyecto
+                script {
+                    def mavenHome = tool 'Maven' // Asegúrate de que 'Maven' esté configurado en Jenkins
+                    sh "${mavenHome}/bin/mvn clean install -DskipTests"
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Ejecuta las pruebas específicas de TestReino.java
+                script {
+                    def mavenHome = tool 'Maven' // Asegúrate de que 'Maven' esté configurado en Jenkins
+                    sh "${mavenHome}/bin/mvn -Dtest=edu.ucam.aplicacion.TestReino test"
+                }
+            }
+            post {
+                // Publica los resultados de las pruebas
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Otras acciones como limpiar el workspace
+            cleanWs()
+        }
+    }
+}
