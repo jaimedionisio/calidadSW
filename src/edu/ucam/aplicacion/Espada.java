@@ -7,7 +7,7 @@ public class Espada extends Arma {
 		super(nombreArma, longitudArma, longitudArma);
 	}
 	
-	//Metodos
+	//Metodos de la clase
 	public int fuerzaArma() {
 		return (int) (30 + this.longitudArma);
 	}
