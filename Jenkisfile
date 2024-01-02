@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clona tu cÃ³digo fuente desde un repositorio Git
-                git 'https://github.com/jaimedionisio/calidadSW.git'
+                // Clona tu código fuente desde un repositorio Git
+                git 'https://github.com/tu-usuario/tu-repositorio.git'
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Ejecuta Maven para compilar el proyecto
                 script {
-                    def mavenHome = tool 'Maven' // AsegÃºrate de que 'Maven' estÃ© configurado en Jenkins
+                    def mavenHome = tool 'Maven' // Asegúrate de que 'Maven' esté configurado en Jenkins
                     sh "${mavenHome}/bin/mvn clean install -DskipTests"
                 }
             }
@@ -21,9 +21,9 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Ejecuta las pruebas especÃ­ficas de TestReino.java
+                // Ejecuta las pruebas específicas de TestReino.java
                 script {
-                    def mavenHome = tool 'Maven' // AsegÃºrate de que 'Maven' estÃ© configurado en Jenkins
+                    def mavenHome = tool 'Maven' // Asegúrate de que 'Maven' esté configurado en Jenkins
                     sh "${mavenHome}/bin/mvn -Dtest=edu.ucam.aplicacion.TestReino test"
                 }
             }
