@@ -11,6 +11,7 @@ public abstract class Arma {
 
 //variables
 private int idArma;
+private int idArma2;
 private static int idSiguienteArma = 1;
 protected String nombreArma;
 protected float pesoArma;
